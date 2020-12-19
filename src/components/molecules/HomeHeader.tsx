@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import HeaderContainer from '../atoms/HeaderContainer';
 import { setTheme } from '../../store/modules/theme/theme.action';
 import { selectChecker } from '../../store/modules/theme/theme.selector';
-//feature
+
 const HomeHeader:React.FC = () => {
   const dispatch = useDispatch();
   const checker:boolean = useSelector(selectChecker);
@@ -45,7 +45,7 @@ const HomeHeader:React.FC = () => {
           display: 'inline-block',
           padding: 0,
           borderRadius: 4,
-          cursor: 'pointer',
+          cursor: 'pointer'
         }}
         type="button"
         onClick={() => {
