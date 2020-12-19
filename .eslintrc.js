@@ -1,42 +1,46 @@
-module.exports={
-  env:{
-    es6:true,
-    jest:true,
-    browser:true
+module.exports = {
+  env: {
+    browser: true,
+    es6: true,
+    jest: true
   },
-  parserOption:{
-    ecmaVersion:2020,
-    sourceType:module,
-    ecmaFeatures:{
-      jsx:true
+  parserOptions: {
+    ecmaVersion: 2020,
+    sourceType: 'module',
+
+    ecmaFeature: {
+      jsx: true
     }
   },
-  extends:[
+
+  extends: [
     'react-app',
-    'air-bnb',
+    'airbnb',
     'plugin:@typescript-eslint/recommended',
     'prettier/@typescript-eslint'
   ],
-  plugins:['react-hooks','import','jsx-a11y'],
-  settings:{
-    'import/parser':{
-      '@typescript-eslint/parser':['.ts','.tsx']
+  plugins: ['react', 'react-hooks', 'import', 'jsx-a11y'],
+  settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx']
     },
-    'import/resolver':{
-      node:{
-        extensions:['.js','.jsx','.ts','.tsx'],
-      }
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
+      },
+      typescript: {}
     }
   },
-  rules:{
-    'linebreak-style':0,
-    'react/jsx-filename-extension':[
+  rules: {
+    'no-use-before-define': 'off',
+    'linebreak-style': 0,
+    'react/jsx-filename-extension': [
       'error',
       {
-        extensions:['.tsx'],
+        extensions: ['.tsx']
       }
     ],
-    'no-case-declarations':'warn',
+    'no-case-declarations': 'warn',
     'no-console': 'warn',
     'no-debugger': 'warn',
     'no-else-return': 'warn',
@@ -45,53 +49,54 @@ module.exports={
     'no-unused-vars': 'off',
     'no-var': 'warn',
     'object-shorthand': 'warn',
+    'comma-dangle': ['error', 'never'],
     'padding-line-between-statements': [
       'warn',
       {
         blankLine: 'always',
         prev: '*',
-        next: 'class',
+        next: 'class'
       },
       {
         blankLine: 'always',
         prev: '*',
-        next: 'for',
+        next: 'for'
       },
       {
         blankLine: 'always',
         prev: '*',
-        next: 'function',
+        next: 'function'
       },
       {
         blankLine: 'always',
         prev: '*',
-        next: 'if',
+        next: 'if'
       },
       {
         blankLine: 'always',
         prev: '*',
-        next: 'return',
+        next: 'return'
       },
       {
         blankLine: 'always',
         prev: '*',
-        next: 'switch',
+        next: 'switch'
       },
       {
         blankLine: 'always',
         prev: '*',
-        next: 'try',
+        next: 'try'
       },
       {
         blankLine: 'always',
         prev: '*',
-        next: 'while',
+        next: 'while'
       },
       {
         blankLine: 'always',
         prev: 'block-like',
-        next: ['let', 'const'],
-      },
+        next: ['let', 'const']
+      }
     ],
     'import/extensions': [
       'error',
@@ -100,14 +105,17 @@ module.exports={
         js: 'never',
         jsx: 'never',
         ts: 'never',
-        tsx: 'never',
-      },
+        tsx: 'never'
+      }
     ],
+    camelcase: ['off'],
+    'no-plusplus': [2, { allowForLoopAfterthoughts: true }],
+    'react/jsx-props-no-spreading': 'off',
     'import/prefer-default-export': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-member-accessibility': 'off',
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'off',
-  },
+    'react-hooks/exhaustive-deps': 'off'
+  }
 
 };
