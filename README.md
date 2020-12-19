@@ -1,4 +1,4 @@
-#This is React app about Countrie 
+# This is React app about Countrie 
 this app show all the countries and u can search for country  and see population, area , gini ...
 
 
