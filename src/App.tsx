@@ -1,12 +1,26 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import { useSelector } from 'react-redux';
+import HomeHeader from './components/molecules/HomeHeader';
+import { Global, darkTheme, lightTheme } from './Global.styled';
+import CountryDetail from './pages/CountryDetail';
 
+import Home from './pages/Home';
+import { selectChecker } from './store/modules/theme/theme.selector';
 
-function App() {
+const App:React.FC = () => {
+  const checker:boolean = useSelector(selectChecker);
+
   return (
-    <div >
-     <h1>ahmad</h1>
-    </div>
+    <ThemeProvider theme={checker ? lightTheme : darkTheme}>
+      <Global />
+      <HomeHeader />
+      <Switch>
+        <Route path="/country/:id" component={CountryDetail} />
+        <Route exact path="/" component={Home} />
+      </Switch>
+    </ThemeProvider>
   );
-}
-
+};
 export default App;
